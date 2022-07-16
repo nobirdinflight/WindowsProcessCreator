@@ -1,16 +1,21 @@
 #pragma once
-
-#include <QtWidgets/QMainWindow>
+#include <QtWidgets>
 #include "ui_WindowsProcessCreator.h"
+#include <string>
 
 class WindowsProcessCreator : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    WindowsProcessCreator(QWidget *parent = nullptr);
-    ~WindowsProcessCreator();
+	WindowsProcessCreator(QWidget* parent = nullptr);
+	~WindowsProcessCreator();
 
 private:
-    Ui::WindowsProcessCreatorClass ui;
+	Ui::WindowsProcessCreatorClass ui;
+	std::wstring file;
+
+private slots:
+	void choose();
+	void launch();
 };
